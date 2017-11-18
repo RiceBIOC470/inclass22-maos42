@@ -9,6 +9,7 @@
 %x^3-Kb(x^2)+x-Ku=0
 
 
+
 figure (3); hold on;
 kb=4;
 for ku=-4:0.05:16
@@ -19,19 +20,9 @@ for ku=-4:0.05:16
 end
 hold off;
 
-figure (4); hold on;
+
+figure (3); hold on;
 kb=4;
-for ku=0:0.05:16
-    polycoeff=[1 -kb 1 -ku];
-    rts=roots(polycoeff);
-    rts=rts(imag(rts)==0);
-    plot(ku*ones(length(rts),1),rts,'r.');
-end
-hold off;
-
-
-figure (5); hold on;
-kb=8;
 for ku=0:0.05:16
     polycoeff=[1 -kb 1 -ku];
     rts=roots(polycoeff);
@@ -42,14 +33,3 @@ hold off;
 
 % 2. Make a similar diagram for the case of an autorepressing gene in the
 % case that 2 copies are need to turn off the gene. 
-
-
-figure (6); hold on;
-ku=2;
-for kb=-4:0.05:16
-    polycoeff=[1 -kb 1 -ku];
-    rts=roots(polycoeff);
-    rts=rts(imag(rts)==0);
-    plot(kb*ones(length(rts),1),rts,'r.');
-end
-hold off;
